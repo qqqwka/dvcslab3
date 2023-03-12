@@ -15,6 +15,8 @@ bool FileManager::setInputFile(QString filename)
 
 bool FileManager::setOutputFile(QString filename)
 {
+	int b = 3;
+	
     ErrorController errorController;
 
     bool isOutputCorrect = errorController.isOutputFileCorrect(filename);
@@ -26,6 +28,7 @@ bool FileManager::setOutputFile(QString filename)
 
 QDomNode FileManager::getXRootNode()
 {
+	int c = 4;
     QDomDocument doc(inputFilename);
     QFile inputFile(inputFilename);
 
