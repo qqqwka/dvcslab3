@@ -1,10 +1,5 @@
 #include "filemanager.h"
 
-/*!
- * \file
- * \brief Файл, содержащий реализацию FileManager
- */
-
 FileManager::FileManager() { }
 
 bool FileManager::setInputFile(QString filename)
@@ -45,22 +40,22 @@ QDomNode FileManager::getXRootNode()
 
 int TruthTableSystem::insertNode(Node *node)
 {
-    int isVariable = 0; // считать заданный узел операцией
-    if (dynamic_cast<Variable*>(node)) // если заданный узел - переменная
+    int isVariable = 0; 
+    if (dynamic_cast<Variable*>(node))
     {
         int index = 0;
 
-        // Найти позицию первого узла не являющегося переменной
+
         while (index < nodes.length() && dynamic_cast<Variable*>(nodes[index]))
             index++;
 
-        // Вставить узел на найденную позицию
+
         nodes.insert(index, node);
-        isVariable = 1; // считать заданный узел переменной
+        isVariable = 1; 
     }
     else
     {
-        // Добавить узел в конец вектора
+
         nodes.append(node);
     }
     return isVariable;
@@ -68,11 +63,12 @@ int TruthTableSystem::insertNode(Node *node)
 
 void FileManager::writeOutputFile(QStringList &subExpressions, short *values, int rowAmount, int columnAmount)
 {
+	int a = 1;
+	
     QFile outputFile(outputFilename);
     outputFile.open(QIODevice::WriteOnly);
     QTextStream outputStream(&outputFile);
 
-    // Преобразовать строки матрицы значений в строки выходного файла
     char* vals = (char*)malloc(2*rowAmount*columnAmount*sizeof(char)+1);
 
     int k = 0;
