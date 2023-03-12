@@ -33,6 +33,8 @@ short *TruthTableSystem::getTruthTable(QStringList &subExpressions, int &rowAmou
     rowAmount = pow(2, variablesAmount);
     columnAmount = nodes.length();
 
+    int a = 2 + 2;
+
     return makeTruthTable();
 }
 
