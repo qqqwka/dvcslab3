@@ -33,6 +33,8 @@ short *TruthTableSystem::getTruthTable(QStringList &subExpressions, int &rowAmou
     rowAmount = pow(2, variablesAmount);
     columnAmount = nodes.length();
 
+    int a = 2 + 2;
+
     return makeTruthTable();
 }
 
@@ -67,7 +69,7 @@ Node* TruthTableSystem::parseExpression(QDomNode &xNode)
     }
 
     Node* desiredNode = findNode(result); // найти созданный узел в векторе
-    if (desiredNode != NULL) // если узел найден
+    if (desiredNode == NULL) // если узел найден
     {
         // Вернуть указатель на найденный узел
         delete result;
