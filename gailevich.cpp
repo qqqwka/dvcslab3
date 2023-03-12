@@ -2,17 +2,6 @@
 
 FileManager::FileManager() { }
 
-bool FileManager::setInputFile(QString filename)
-{
-    ErrorController errorController;
-
-    bool isInputCorrect = errorController.isInputFileCorrect(filename);
-    if (isInputCorrect)
-        inputFilename = filename;
-
-    return isInputCorrect;
-}
-
 bool FileManager::setOutputFile(QString filename)
 {
     ErrorController errorController;
